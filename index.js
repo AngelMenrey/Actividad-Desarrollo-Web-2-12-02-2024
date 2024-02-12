@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
   return res.send("Mascotas");
 });
 
-const pets = [
+let pets = [
   { id: 1, name: "Dog" },
   { id: 2, name: "Cat" },
 ];
@@ -31,7 +31,7 @@ app.patch("/pets/:id", (req, res) => {
   const { id } = req.params;
   let mascota = mascotas.find((mascota) => mascota.id == id);
   mascota.name = name;
-  res.send({ message: "se actualizo mascota", mascota });
+  res.send({ message: "se elimino la mascota", mascota });
 });
 
 app.delete("/pets/:id", (req, res) => {
